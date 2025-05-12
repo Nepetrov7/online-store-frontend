@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { useCartStore } from '@/entities/cart/model/useCartStore';
 import { useAuthStore } from '@/app/store/authStore';
 import { useCurrentUser } from '@/entities/user';
+import { Button } from '@/shared/ui/Button';
 import styles from './Header.module.css';
 
 export const Header = () => {
@@ -14,7 +15,7 @@ export const Header = () => {
     return (
         <header className={styles.header}>
             <div className={styles.header__logo}>
-                <Link to="/" className={styles.title}>
+                <Link to="/">
                     {/* <img src="/src/shared/assets/logo.png" alt="logo" /> */}
                     <h1 className={styles.title}>Shoply</h1>
                 </Link>
@@ -22,32 +23,35 @@ export const Header = () => {
 
             <nav className={styles.nav}>
                 <ul>
+                    {token && (
+                        <li>
+                            <Link to="/">Главная</Link>
+                        </li>
+                    )}
                     <li>
-                        <Link className={styles.link} to="/catalog">
-                            Catalog
-                        </Link>
+                        <Link to="/catalog">Каталог</Link>
                     </li>
-                    <li>
-                        <Link to="/cart">Cart ({cart.length})</Link>
-                    </li>
+
                     {!token ? (
                         <>
                             <li>
-                                <Link to="/login">Login</Link>
+                                <Link to="/login">Войти</Link>
                             </li>
                             <li>
-                                <Link to="/register">Register</Link>
+                                <Link to="/register">Зарегистрироваться</Link>
                             </li>
                         </>
                     ) : (
                         <>
+                            {/* <li>
+                                <Link to="/dashboard">Dashboard</Link>
+                            </li> */}
                             <li>
-                                <Link to="/dashboard" style={{ marginRight: 10 }}>
-                                    Dashboard
-                                </Link>
+                                <Link to="/cart">Козина ({cart.length})</Link>
                             </li>
-                            <span style={{ fontSize: 14, color: '#555' }}>👤 {user?.name || 'User'}</span>
-                            <button onClick={logout}>Logout</button>
+
+                            <span>👤 {user?.name || 'User'}</span>
+                            <Button onClick={logout}>Выход</Button>
                         </>
                     )}
                 </ul>
