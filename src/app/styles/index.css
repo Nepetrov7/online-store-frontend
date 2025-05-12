@@ -20,7 +20,7 @@
 /* Set default font and background */
 body {
     font-family: var(--font-family);
-    background: var(--color-bg);
+    background: var(--color-light);
     line-height: 1.6;
 }
 
