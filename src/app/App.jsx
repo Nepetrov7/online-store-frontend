@@ -2,7 +2,8 @@ import React from 'react';
 import { BrowserRouter } from 'react-router-dom';
 import { AppRoutes } from '@/app/router/routes';
 import { Header } from '@/widgets/Header';
-import { Container } from '@/shared/components/Container/Container';
+import { Footer } from '@/widgets/Footer';
+import { Container } from '@/shared/components/Container';
 import { Loader } from '@/shared/ui/Loader';
 
 export const App = () => {
@@ -13,6 +14,7 @@ export const App = () => {
                 <React.Suspense fallback={<Loader />}>
                     <AppRoutes />
                 </React.Suspense>
+                <Footer />
             </Container>
         </BrowserRouter>
     );
