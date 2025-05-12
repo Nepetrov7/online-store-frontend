@@ -10,10 +10,17 @@ const NotFound = React.lazy(() =>
     }))
 );
 
+const HomePage = React.lazy(() =>
+    import('@/pages/HomePage').then((module) => ({
+        default: module.HomePage,
+    }))
+);
+
 export const AppRoutes = () =>
     useRoutes([
         ...AuthRoutes,
         ...DashboardRoutes,
-        { path: '/', element: <Navigate to="/dashboard" replace /> },
+        { path: '/', element: <HomePage /> },
+        // { path: '/', element: <Navigate to="/dashboard" replace /> },
         { path: '*', element: <NotFound /> },
     ]);
