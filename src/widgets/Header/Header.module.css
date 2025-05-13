@@ -1,0 +1,40 @@
+.header {
+    background-color: var(--color-accent);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom-right-radius: 15px;
+    border-bottom-left-radius: 15px;
+    padding: 0 25px 0 25px;
+    margin-bottom: 20px;
+}
+
+.title {
+    text-decoration: none;
+    color: var(--color-dark);
+}
+
+.nav {
+    width: 90%;
+}
+
+.nav ul {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+
+    gap: 1rem;
+}
+
+.nav li {
+    margin: 10px;
+}
+
+.nav li a {
+    font-size: 20px;
+    color: var(--color-light);
+}
+
+.nav li a:hover {
+    color: var(--color-dark);
+}

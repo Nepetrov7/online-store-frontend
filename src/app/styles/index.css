@@ -1,0 +1,53 @@
+/* Root theme variables */
+:root {
+    --font-family: 'Roboto', sans-serif;
+    --main-transition: 0.5s all --color-bg: papayawhip;
+    --color-accent: coral;
+    --color-light: wheat;
+    --color-dark: royalblue;
+    --color-text: chocolate;
+}
+
+/* Global Reset */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Set default font and background */
+body {
+    font-family: var(--font-family);
+    background: var(--color-light);
+    line-height: 1.6;
+}
+
+/* Utility */
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button {
+    font-family: inherit;
+    cursor: pointer;
+    background: none;
+    border: none;
+}
+
+ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.container {
+    min-width: 250px;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    /*высота header и footer*/
+    grid-template-rows: 100px 1fr 50px;
+    min-height: 100vh;
+}
