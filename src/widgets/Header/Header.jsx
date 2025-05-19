@@ -25,7 +25,9 @@ export const Header = () => {
                 <ul>
                     {token && (
                         <li>
-                            <Link to="/">Главная</Link>
+                            <Link className={styles.link} to="/">
+                                Главная
+                            </Link>
                         </li>
                     )}
                     <li>
