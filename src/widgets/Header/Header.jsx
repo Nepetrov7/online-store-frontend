@@ -36,10 +36,7 @@ export const Header = () => {
                     {!token ? (
                         <>
                             <li>
-                                <Link to="/login">Войти</Link>
-                            </li>
-                            <li>
-                                <Link to="/register">Зарегистрироваться</Link>
+                                <Link to="/login">Вход/Регистрация</Link>
                             </li>
                         </>
                     ) : (
