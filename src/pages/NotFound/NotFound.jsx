@@ -2,11 +2,14 @@ import { Link } from 'react-router-dom';
 import styles from './NotFound.module.css';
 
 export const NotFound = () => (
-    <div className={styles.container}>
-        <h2>404 - Страница не найдена</h2>
-        <p>Такой страницы не существует.</p>
-        <Link style={{ color: 'var(--color-dark)', textDecoration: 'underline' }} to="/">
-            Вернуться на главную
-        </Link>
-    </div>
+    <section className={styles.page}>
+        <div className={styles.box}>
+            <h1>😕 404</h1>
+            <h2>Страница не найдена</h2>
+            <p>Такой страницы не существует или она была перемещена.</p>
+            <Link to="/" className={styles.link}>
+                ← Вернуться на главную
+            </Link>
+        </div>
+    </section>
 );
