@@ -1,4 +1,3 @@
-import React from 'react';
 import { useCartStore } from '@/entities/cart/model/useCartStore';
 import { calculateTotal } from '@/entities/cart/helpers/calculateTotal';
 

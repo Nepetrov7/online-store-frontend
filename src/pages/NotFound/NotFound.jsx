@@ -1,7 +1,5 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
 import styles from './NotFound.module.css';
-import { Container } from '@/shared/components/Container';
 
 export const NotFound = () => (
     <div className={styles.container}>
