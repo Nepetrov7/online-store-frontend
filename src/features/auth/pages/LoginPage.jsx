@@ -8,13 +8,13 @@ import { Input } from '@/shared/ui/Input';
 import styles from './Auth.module.css';
 
 const schema = z.object({
-    email: z.string().email({ message: 'Некорректный email' }),
+    username: z.string().min(3, { message: 'Минимум 3 символа' }),
     password: z.string().min(6, { message: 'Минимум 6 символов' }),
 });
 
 export const LoginPage = () => {
     const navigate = useNavigate();
-    const [email, setEmail] = useState('');
+    const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [errors, setErrors] = useState({});
     const [loading, setLoading] = useState(false);
@@ -25,7 +25,7 @@ export const LoginPage = () => {
 
         setSubmitError(null);
 
-        const validation = schema.safeParse({ email, password });
+        const validation = schema.safeParse({ username, password });
 
         if (!validation.success) {
             const fieldErrors = {};
@@ -43,7 +43,7 @@ export const LoginPage = () => {
         setLoading(true);
 
         try {
-            await login({ email, password });
+            await login({ username, password });
             navigate('/dashboard');
         } catch (err) {
             setSubmitError(`Ошибка при входе: ${err.message}`);
@@ -59,10 +59,10 @@ export const LoginPage = () => {
                 <p className={styles.subtitle}>Войдите в свой аккаунт, чтобы продолжить</p>
                 <form className={styles.form} onSubmit={handleLogin}>
                     <Input
-                        placeholder="Email"
-                        type="email"
-                        value={email}
-                        onChange={(e) => setEmail(e.target.value)}
+                        placeholder="Логин"
+                        type="text"
+                        value={username}
+                        onChange={(e) => setUsername(e.target.value)}
                         required
                     />
                     <Input
@@ -72,7 +72,9 @@ export const LoginPage = () => {
                         onChange={(e) => setPassword(e.target.value)}
                         required
                     />
-                    {(errors.password || errors.email) && <label className={styles.error}>Неверные email/пароль</label>}
+                    {(errors.password || errors.username) && (
+                        <label className={styles.error}>Неверные username/пароль</label>
+                    )}
 
                     {submitError && <label className={styles.error}>{submitError}</label>}
 

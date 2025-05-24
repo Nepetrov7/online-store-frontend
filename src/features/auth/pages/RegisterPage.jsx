@@ -9,8 +9,9 @@ import styles from './Auth.module.css';
 
 const schema = z
     .object({
+        firstName: z.string().min(2, { message: 'Минимум 2 символа' }),
+        lastName: z.string().min(2, { message: 'Минимум 2 символа' }),
         username: z.string().min(3, { message: 'Минимум 3 символа' }),
-        email: z.string().email({ message: 'Некорректный email' }),
         password: z.string().min(6, { message: 'Минимум 6 символов' }),
         confirmPassword: z.string(),
     })
@@ -21,8 +22,9 @@ const schema = z
 
 export const RegisterPage = () => {
     const navigate = useNavigate();
+    const [firstName, setFirstName] = useState('');
+    const [lastName, setLastName] = useState('');
     const [username, setUsername] = useState('');
-    const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
     const [errors, setErrors] = useState({});
@@ -34,7 +36,7 @@ export const RegisterPage = () => {
 
         setSubmitMessage(null);
 
-        const validation = schema.safeParse({ username, email, password, confirmPassword });
+        const validation = schema.safeParse({ firstName, lastName, username, password, confirmPassword });
 
         if (!validation.success) {
             const fieldErrors = {};
@@ -52,7 +54,7 @@ export const RegisterPage = () => {
         setLoading(true);
 
         try {
-            await register({ email, password });
+            await register({ firstName, lastName, username, password });
             navigate('/dashboard');
         } catch (err) {
             setSubmitMessage(`Ошибка при регистрации: ${err.message}`);
@@ -70,20 +72,29 @@ export const RegisterPage = () => {
                     <Input
                         placeholder="Имя"
                         type="text"
+                        value={firstName}
+                        onChange={(e) => setFirstName(e.target.value)}
+                        required
+                    />
+                    {errors.firstName && <label className={styles.error}>{errors.firstName}</label>}
+
+                    <Input
+                        placeholder="Фамилия"
+                        type="text"
+                        value={lastName}
+                        onChange={(e) => setLastName(e.target.value)}
+                        required
+                    />
+                    {errors.lastName && <label className={styles.error}>{errors.lastName}</label>}
+
+                    <Input
+                        placeholder="Логин"
+                        type="text"
                         value={username}
                         onChange={(e) => setUsername(e.target.value)}
                         required
                     />
                     {errors.username && <label className={styles.error}>{errors.username}</label>}
-
-                    <Input
-                        placeholder="Email"
-                        type="email"
-                        value={email}
-                        onChange={(e) => setEmail(e.target.value)}
-                        required
-                    />
-                    {errors.email && <label className={styles.error}>{errors.email}</label>}
 
                     <Input
                         placeholder="Пароль"
