@@ -1,8 +1,9 @@
 import React from 'react';
 
-import { Navigate, useRoutes } from 'react-router-dom';
+import { useRoutes } from 'react-router-dom';
 import { AuthRoutes } from '@/features/auth/routes';
 import { DashboardRoutes } from '@/features/dashboard/routes';
+import { CategoryRoutes } from '@/features/category/routes';
 
 const NotFound = React.lazy(() =>
     import('@/pages/NotFound').then((module) => ({
@@ -20,6 +21,7 @@ export const AppRoutes = () =>
     useRoutes([
         ...AuthRoutes,
         ...DashboardRoutes,
+        ...CategoryRoutes,
         { path: '/', element: <HomePage /> },
         // { path: '/', element: <Navigate to="/dashboard" replace /> },
         { path: '*', element: <NotFound /> },
