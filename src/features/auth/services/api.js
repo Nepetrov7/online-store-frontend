@@ -24,3 +24,12 @@ export const register = async ({ firstName, lastName, username, password }) => {
 
     return response.data;
 };
+
+export const logout = async () => {
+    const response = await apiClient.post('/auth/logout');
+
+    // Удаляем токен из хранилища
+    useAuthStore.getState().logout();
+
+    return response.data;
+};
