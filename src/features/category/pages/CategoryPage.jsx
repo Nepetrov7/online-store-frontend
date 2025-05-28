@@ -39,7 +39,7 @@ export const CategoryPage = () => {
                         <h2 className={styles.name}>{item.name}</h2>
                         {/* <p className={styles.price}>{item.price}</p> */}
                         <Button className={styles.button}>
-                            <Link to={`/category/${item.id}`}>Перейти</Link>
+                            <Link to={`/product/${item.id}`}>Перейти</Link>
                         </Button>
                     </div>
                 ))}

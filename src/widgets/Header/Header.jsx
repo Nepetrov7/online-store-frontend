@@ -34,8 +34,8 @@ export const Header = () => {
                             <Button>Главная</Button>
                         </Link>
                     )}
-                    <Link to="/catalog">
-                        <Button>Каталог</Button>
+                    <Link to="/category">
+                        <Button>Категории</Button>
                     </Link>
 
                     {!token ? (
