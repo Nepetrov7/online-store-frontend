@@ -2,7 +2,7 @@ import axios from 'axios';
 import { useAuthStore } from '@/app/store/authStore';
 
 const api = axios.create({
-    baseURL: 'http://online-store:8000/',
+    baseURL: 'https://online-store.nepetrov.ru/',
     // baseURL: 'http://localhost:8000/',
 });
 
