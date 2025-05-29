@@ -44,7 +44,7 @@ export const LoginPage = () => {
 
         try {
             await login({ username, password });
-            navigate('/dashboard');
+            navigate('/category');
         } catch (err) {
             setSubmitError(`Ошибка при входе: ${err.message}`);
         } finally {

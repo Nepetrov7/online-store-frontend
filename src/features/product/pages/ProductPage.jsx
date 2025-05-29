@@ -5,18 +5,18 @@ import { Loader } from '@/shared/ui/Loader';
 
 import styles from './Product.module.css';
 import { fetchProduct } from '@/entities/product/service/productApi';
+import { useCartStore } from '@/entities/cart/model/useCartStore';
 
 export const ProductPage = () => {
     const { id } = useParams();
     const [product, setProduct] = useState(null);
     const [loading, setLoading] = useState(true);
+    const { addToCart } = useCartStore();
 
     useEffect(() => {
         const load = async () => {
             try {
                 const data = await fetchProduct(id);
-                console.log(data);
-
                 setProduct(data);
             } catch (e) {
                 console.error('Ошибка загрузки товара:', e);
@@ -48,7 +48,9 @@ export const ProductPage = () => {
 
                     <div>
                         <p className={styles.price}>{item.price} $</p>
-                        <Button className={styles.button}>Добавить в корзину</Button>
+                        <Button className={styles.button} onClick={() => addToCart(item)}>
+                            Добавить в корзину
+                        </Button>
                     </div>
                 </div>
             ))}

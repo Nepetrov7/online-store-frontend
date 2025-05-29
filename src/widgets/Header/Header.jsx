@@ -15,7 +15,7 @@ export const Header = () => {
 
     const logoutHandler = () => {
         logout();
-        navigate('/dashboard');
+        navigate('/login');
     };
 
     return (
@@ -46,9 +46,6 @@ export const Header = () => {
                         </>
                     ) : (
                         <>
-                            {/* <li>
-                                <Link to="/dashboard">Dashboard</Link>
-                            </li> */}
                             <Link to="/cart">
                                 <Button>Козина ({cart.length})</Button>
                             </Link>
