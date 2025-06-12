@@ -1,0 +1,288 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Recursive', sans-serif;
+    background: papayawhip;
+}
+
+.container {
+    min-width: 250px;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    /*высота header и footer*/
+    grid-template-rows: 100px 1fr 50px;
+    min-height: 100vh;
+}
+
+/*Шапка*/
+header {
+    background-image: url("../img/header.jpg");/*Это картинка*/
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom-right-radius: 15px;
+    border-bottom-left-radius: 15px;
+    padding: 0 25px 0 25px;
+    margin-bottom: 20px;
+}
+/*ЛОГО*/
+header img {
+    width: 125px;
+    height: 78px;
+}
+
+.menu {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.menu li {
+    list-style-type: none;
+    padding: 10px;
+    margin: 15px;
+}
+
+.menu li a {
+    font-size: 20px;
+    text-decoration: none;
+    color: wheat;
+}
+
+.menu li a:hover {
+    color: royalblue;
+    border-bottom: 1px solid blue;
+}
+
+/*Контент*/
+.content h1 {
+    color: deepskyblue;
+    font-style: italic;
+    width: 100%;
+}
+
+.content {
+    font-size: 25px;
+    color: royalblue;
+    padding: 0 25px 0 25px;
+}
+/*Каталог*/
+.product {
+    margin: 50px 50px 0 0;
+    outline: 5px solid coral;
+}
+
+.product .name {
+    font-size: 25px;
+    color: royalblue;
+    text-decoration: none;
+}
+
+.product .name:hover {
+    color: blue;
+    border-bottom: 1px solid blue;
+}
+
+.product:hover {
+    outline: none;
+}
+
+.links {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+}
+
+.links img[alt="bike"] {
+    width: 223px;
+    height: 158px;
+}
+/*Товары*/
+.content_product {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.text {
+    width: 50%;
+    background: wheat;
+    border-radius: 15px;
+    padding: 25px;
+    color: coral;
+}
+
+.text a {
+    padding: 10px;
+    outline: 3px solid coral;
+    float: right;
+    text-decoration: none;
+    background: coral;
+    color: wheat;
+}
+
+.text a:hover {
+    background: wheat;
+    color: chocolate;
+    outline: 3px solid coral;
+}
+
+.text a:active {
+    outline: 3px solid chocolate;
+    background: coral;
+    color: wheat;
+}
+
+.text2 {
+    width: 100%;
+    background: wheat;
+    border-radius: 15px;
+    padding: 25px;
+    color: coral;
+    margin: 20px 0 20px 0;
+}
+
+caption {
+    color: coral;
+    margin-top: 20px;
+}
+
+.img {
+    outline: 3px solid coral;
+    width: 493px;
+    height: 347px;
+}
+
+.img:hover {
+    outline: none;
+}
+
+.specifications {
+    width: 100%;
+    height: 200px;
+    /*border: 1px solid black;*/
+    border-collapse: collapse;
+    background: coral;
+    color: wheat;
+    border-radius: 15px;
+    border-spacing: 10px;
+}
+
+.specifications td {
+    /*border: 1px solid black;*/
+    padding: 5px;
+}
+/*Контакты*/
+.content_contact h1 {
+    color: wheat;
+}
+
+.content_contact {
+    font-size: 25px;
+    color: royalblue;
+    padding: 0 25px 0 25px;
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+}
+
+form {
+    width: 40%;
+    background: coral;
+    padding: 25px;
+    border-radius: 15px;
+    margin: 0 25px 20px 0;
+}
+
+span {
+    color: wheat;
+}
+
+textarea {
+    width: 235px;
+    background: wheat;
+    color: chocolate;
+    border: none;
+    padding: 2%;
+    outline: none;
+}
+
+.input {
+    width: 200px;
+    padding: 2%;
+    font-family: "Roboto Light";
+    font-size: 18px;
+    color: chocolate;
+    background: wheat;
+    border: none;
+    margin: 0 0 10px 0;
+    outline: none;
+}
+
+.input:focus {
+    background: #eaeaea;
+}
+
+.input[type="text"] {
+    text-transform: capitalize;
+}
+
+.btn {
+    padding: 2%;
+    font-family: 'Recursive', sans-serif;
+    text-align: center;
+    font-size: 18px;
+    color: chocolate;
+    background: wheat;
+    border: none;
+    outline: none;
+}
+
+.btn:hover {
+    color: wheat;
+    background: chocolate;
+}
+
+.btn:active {
+    color: chocolate;
+    background: wheat;
+}
+
+.address h1 {
+    color: coral;
+}
+
+.address {
+    width: 49%;
+    background: wheat;
+    padding: 25px 0 25px 25px;
+    border-radius: 15px;
+    margin: 0 25px 20px 0;
+}
+
+.address_too {
+    color: coral;
+}
+/*Карта Яндекса*/
+iframe {
+    width: 95.5%;
+    height: 374px;
+    margin-top: 20px;
+
+}
+/*Подвал*/
+footer {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 0 25px 0 25px;
+    background: royalblue;
+    color: wheat;
+    border-top-right-radius: 15px;
+    border-top-left-radius: 15px;
+}
