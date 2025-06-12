@@ -1,0 +1,202 @@
+* body, html {
+    background: #f8f8f8;
+}
+
+a {
+    text-decoration: none;
+    font-style: oblique;
+    font-size: 18px;
+    color: blue;
+}
+
+a:hover {
+    color: dodgerblue;
+    text-decoration-line: underline;
+}
+
+.logo {
+    width: 15px;
+    height: 15px;
+}
+
+.header img {
+    width: 10%;
+    height: 10%;
+    float: left;
+    margin: 6px 10px 10px 10px;
+}
+
+.menu_list {
+    list-style-type: none;
+    float: left;
+}
+
+.menu_link {
+    font-size: 20px;
+    color: darkblue;
+    font-style: oblique;
+    float: right;
+    padding-right: 20px;
+}
+
+.menu_link:hover {
+    color: dodgerblue;
+}
+
+.menu_link:active {
+    color: darkblue;
+}
+/*Каталог*/
+.links a {
+    color: black;
+}
+
+.links a:nth-child(3):after {
+    content: ' Спец предложение';
+    text-transform: uppercase;
+    color: red;
+}
+
+.links a:hover {
+    text-decoration: none;
+    color: #707070;
+}
+/*Страница товара*/
+.header {
+    color: #000000;
+    font-size: 18px;
+    font-weight: 400;
+    background: #eaeaea;
+}
+
+.one_paragraph {
+    color: #707070;
+    font-size: 14px;
+    font-style: italic;
+    line-height: 16px;
+}
+
+.two_paragraph {
+    color: #484343;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    text-align: left;
+}
+
+.one_paragraph:first-letter {
+    font-size: 25px;
+    color: brown;
+    font-style: italic;
+}
+
+.two_paragraph:first-letter {
+    font-size: 25px;
+    color: brown;
+    font-style: italic;
+}
+
+/*Картинка*/
+.img {
+    outline: 2px solid gray;
+    width: 464px;
+    height: 310px;
+    float: left;
+    margin-right: 10px;
+}
+
+.img:hover {
+    outline: none;
+}
+
+/*Характеристики*/
+
+.specifications {
+    width: 30%;
+    height: 200px;
+    border: 1px solid black;
+    border-collapse: collapse;
+    background-color: #ccc;
+    font-style: oblique;
+    font-size: 18px;
+}
+
+.specifications td {
+    border: 1px solid black;
+}
+/*.specifications > li {*/
+/*    list-style-type: none;*/
+/*    font-style: italic;*/
+/*    font-size: 18px;*/
+/*    color: darkgreen;*/
+/*}*/
+
+/*Контакты*/
+form {
+    width: 40%;
+    height: 540px;
+    background: #ccc;
+    padding: 25px;
+    border-radius: 15px;
+}
+
+.input {
+    width: 200px;
+    height: 20px;
+    font-style: oblique;
+    color: blue;
+    background: #eaeaea;
+    border-radius: 15px;
+
+}
+
+.input[type="text"] {
+    text-transform: capitalize;
+}
+
+.input:focus {
+    background-color: white;
+}
+
+span {
+    font-style: oblique;
+    font-size: 18px;
+}
+
+select {
+    height: 20px;
+    border-radius: 15px;
+    background: #eaeaea;
+    font-style: oblique;
+}
+
+textarea {
+    background: #eaeaea;
+    border-radius: 15px;
+    color: blue;
+    font-style: oblique;
+    text-transform: capitalize;
+}
+
+.btn {
+    width: 90px;
+    height: 30px;
+    border-radius: 15px;
+    background: #eaeaea;
+    margin: 7px 8px 0 5px;
+}
+/*Задание с таблицуй*/
+table {
+    border: 3px solid black;
+    width: 100%;
+    height: 500px;
+    border-collapse: collapse;
+}
+
+table td {
+    border: 3px solid black;
+}
+
+.top {
+    height: 50px;
+}
