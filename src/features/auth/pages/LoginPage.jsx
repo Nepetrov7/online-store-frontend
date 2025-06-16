@@ -46,7 +46,7 @@ export const LoginPage = () => {
             await login({ username, password });
             navigate('/category');
         } catch (err) {
-            setSubmitError(`Ошибка при входе: ${err.message}`);
+            setSubmitError(`Ошибка при входе: ${err.response?.data?.detail}`);
         } finally {
             setLoading(false);
         }

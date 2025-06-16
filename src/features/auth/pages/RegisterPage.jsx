@@ -57,7 +57,7 @@ export const RegisterPage = () => {
             await register({ firstName, lastName, username, password });
             navigate('/category');
         } catch (err) {
-            setSubmitMessage(`Ошибка при регистрации: ${err.message}`);
+            setSubmitMessage(`Ошибка при регистрации: ${err.response?.data?.detail}`);
         } finally {
             setLoading(false);
         }
